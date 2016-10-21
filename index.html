@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Laumer CodeTest-2</title>
+<!-- bower:css -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<!-- endbower -->
+
+<!-- inject:css -->
+<link rel="stylesheet" href="/app/styles/styles.css">
+<!-- endinject -->
+</head>
+<body>
+
+        <div class="headline">  
+            <h1>CodeTest-2</h1>
+        </div>  
+        <br>
+
+        <!-- This is the JS portion of the test. Work shown on the app.js file -->
+        <div>
+        	<b>Question 1:</b>
+        	<p id="answer1"></p>
+        </div>
+         <div>
+        	<b>Question 2:</b>
+        	<p id="answer2"></p>
+        </div>
+         <div>
+			<b>Question 3:</b>
+			<p>Bubble sort this Array: [12, 345, 4, 546, 122, 84, 98, 64, 9, 1, 3223, 455, 23, 234, 213]</p>
+			<button onclick="myFunction()">Click to display bubble sort</button>
+        	<p id="answer3"></p>
+        </div>
+
+<!-- /////////////////////////// -->
+<!-- JQUERY PORTION OF TEST, work shown below: -->
+
+  		<div>
+        	<b>Question 4:</b>
+        </div>
+
+
+<body id="beachStuff">
+	<li>Beach Towel</li>
+	<li>Suntan Lotion</li>
+	<li>Mask, Fins and Snorkel</li>
+	<li>Boogie Board</li>
+</body>
+    
+    <script>
+		
+			// Use the .each() method to iterate over the DOM elements, the callback is fired in the context of the current DOM element so the keyword 'this' refers to the element. In this case, $("this") will represent the looping string of beach items. (^\w+) will pick out the first word in each of the list items, and then we replace with a bold $1 - (first word)  
+
+			//JQUERY
+
+				
+			$("li").each(function(){
+				var beachBold = $("this");
+				beachBold = beachBold.replace( /(^\w+)/ , "<span>$1</span>");
+				$("span").css("font-weight", "Bold");
+			});
+	
+
+	</script>
+
+	<div>
+    	<b>Question 5:</b>
+    </div>
+		<!-- named the body class clickyBody and the <p> clickyPart -->
+		<body class="clickyBody">
+		<p class="clickyPart">Click Me!</p>
+    	</body> 
+
+    	<!-- JQUERY INCLUDED IN SCRIPT TAGS BELOW  -->  
+		    <script>
+				$(".clickyPart").bind("click", function(){  
+				   $( "<p>This is a click Event</p>").appendTo( ".clickyBody" );  
+				});  
+				$(".clickyPart").bind("dblclick", function(){  
+				  $( "<p>This is a double-click Event</p>"  ).appendTo( ".clickyBody" );  
+				});  
+			</script>
+
+    <div>
+    	<b>Question 6:</b>
+    </div>
+	
+		<body>
+		<!-- Gave the div a class name of clickyColor -->
+	        <div class= "clickyColor" style="background:blue"> 
+	            <p>Click the button to change the background color of this paragraph.</p> 
+	            <button>Change Color</button> 
+	        </div>
+	    </body>
+
+    		<!-- JQUERY INCLUDED IN SCRIPT TAGS BELOW  --> 
+    		<script>
+				$(".clickyColor").on("click", function() {
+				    $(this).css("background", "orange");
+				})
+			</script>
+<br>
+	<div>
+    	<b>Written Questions 1-10:</b>
+    </div>
+    <p>
+	
+<b>Provide answers to the following AngularJS questions and</b> <br>
+<b>submit the questions and your answers on a simple HTML page:</b>
+<br>
+<div></div>
+
+1. How do you define an AngularJS application?
+<br>
+
+AngularJS is a structural framework for dynamic web apps. It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly. Angular's data binding and dependency injection eliminate much of the code you would otherwise have to write.
+
+<br>
+2. What is a controller?
+<br>
+
+In Angular, a Controller is defined by a JavaScript constructor function that is used to augment the Angular Scope. When a Controller is attached to the DOM via the ng-controller directive, Angular will instantiate a new Controller object, using the specified Controller's constructor function.
+
+<br>
+3. What does ng-model do?
+<br>
+
+The ngModel directive binds an input,select, textarea (or custom form control) to a property on the scope using NgModelController, which is created and exposed by this directive.
+
+<br>
+4. What is interpolation markup?
+<br>
+
+Interpolation markup with embedded expressions is used by Angular to provide data-binding to text nodes and attribute values.
+
+An example of interpolation is shown in commented code below:
+
+<!-- <a ng-href="img/{{username}}.jpg">Hello {{username}}!</a> -->
+
+<br>
+5. What is $scope?
+<br>
+
+$scope is the link between your view and controller. Any property that the html evaluates is evaluated on a particular scope. 
+For eg.  When you write {{name}}, Angular searches for name property in the corresponding scope. 
+
+Scope allows propagation of changes in your models (i.e.  any property of scope eg $scope. name) to your views. This is called 2 way binding. 
+
+<br>
+6. What is dependency injection?
+<br>
+
+Dependency injection is basically providing the objects that an object needs (its dependencies) instead of having it construct them itself. It's a very useful technique for testing, since it allows dependencies to be mocked or stubbed out.
+
+Dependencies can be injected into objects by many means (such as constructor injection or setter injection). One can even use specialized dependency injection frameworks (e.g Spring) to do that, but they certainly aren't required. You don't need those frameworks to have dependency injection. Instantiating and passing objects (dependencies) explicitly is just as good an injection as injection by framework.
+
+<br>
+7. What is two-way binding?
+<br>
+
+Two-way binding means that any data-related changes affecting the model are immediately propagated to the matching view(s), and that any changes made in the view(s) (say, by the user) are immediately reflected in the underlying model. When app data changes, so does the UI, and conversely.
+
+<br>
+8. What is 'controller as' syntax?
+<br>
+
+Essentially we are assigning 'this' to a variable vm and then attaching a property and behaviour to that.  On the view we can access the AddVmController using controller as syntax.
+
+<br>
+9. What is MV* architecture?
+<br>
+
+Ember and AngularJS are examples of two MV* architecture frameworks. MVC offers architectural benefits over standard JavaScript — it helps you write better organized, and therefore more maintainable code. This pattern has been used and extensively tested over multiple languages and generations of programmers.
+
+MVC is composed of three components: Model - View - Controller
+
+<br>
+10. What is the difference between a service and a factory?
+<br>
+
+Most important is to realize that both are singletons in your app, even though the name “factory” might imply differently.
+
+Essentially, factories are functions that return the object, while services are constructor functions of the object which are instantiated with the new keyword.
+
+</div>
+
+</p>
+
+
+
+
+<!-- bower:js -->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<!-- endbower -->
+<!-- inject:js -->
+<script src="/app/app.js"></script>
+<!-- endinject -->
+</body>
+</html>
